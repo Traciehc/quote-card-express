@@ -12,16 +12,16 @@ async function getRandomPhoto() {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        console.log(data.urls.regular);
+        console.log(data);
 
-        const randomImgUrl = data.urls.regular;
+        const randomImgUrl = data;
         const imgDiv = document.querySelector(".background-img");
         imgDiv.style.backgroundImage = `url(${randomImgUrl})`;
 
     }catch (error) {
         console.log(error);
     }
-    getRandomPhoto();
+    
 }
 //interating through objects.  Save for later reference.
 
