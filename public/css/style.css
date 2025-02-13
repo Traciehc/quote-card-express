@@ -16,7 +16,7 @@ body {
 
 background-img {
 
-background-image: url('..\img\bigtech.png');
+background-image: url('../img/bigtech.jpg');
 background-size: cover;
 position: fixed;
 top: 0;
