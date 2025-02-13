@@ -5,6 +5,26 @@ const el = {
     author: document.getElementById("author")
 };
 
+//https://api.unsplash.com/photos/?client_id=YOUR_ACCESS_KEY found in notes.txt
+
+async function getRandomPhoto() {
+    const url = "http://localhost:1776/api/getRandomImage";
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log(data.urls.regular);
+
+        const randomImgUrl = data.urls.regular;
+        const imgDiv = document.querySelector(".background-img");
+        imgDiv.style.backgroundImage = `url(${randomImgUrl})`;
+
+    }catch (error) {
+        console.log(error);
+    }
+    getRandomPhoto();
+}
+//interating through objects.  Save for later reference.
+
 const quotes = [
     {
         quote: "When you reach the end of your rope, tie a knot in it and hang on.",
@@ -19,17 +39,19 @@ const quotes = [
         author: "George Washington"
     }
 ];
-
-function loopQuote() {
-    let count = 0;
+//Iterating through objects save for later reference
+/*function loopQuote() {
+    let currentIndex = 0;
     setInterval(() => {
-        el.quote.innerText = quotes[count].quote;
-        el.author.innerText = quotes[count].author;
+        el.quote.innerText = quotes[currentIndex].quote;
+        el.author.innerText = quotes[currentIndex].author;
 
-        count++;
-        if (count >= quotes.length) {
-            count = 0;
+        currentIndex++;
+        if (currentIndex >= quotes.length) {
+            currentIndex = 0;
         }
     }, 3000);
 }
-setTimeout(loopQuote, 3000);
+setTimeout(loopQuote, 3000);*/
+
+
