@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
 async function getRandomPhoto() {
-    const url = `https://api.unsplash.com/photos/random/?client_id=${process.env.client_id}`;
+    const url = `http://localhost:1776/api/getRandomImage}`;
     try {
         const response = await fetch(url);
         const data = await response.json()
