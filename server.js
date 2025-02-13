@@ -35,7 +35,7 @@ app.get("/api/getRandomImage", (request,response) => {
     getRandomPhoto().then((returnedPhoto) => {
          response.status(200).json({
         status: 200,
-        data: process.env.client_id
+        data: returnedPhoto
          })
     })
 })
